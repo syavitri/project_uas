@@ -94,3 +94,27 @@ function Register() {
     });
   }
 }
+function Login() {
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+  if (
+    email == "mabot@mabot.com" &&
+    password == "12345678"
+  ) {
+    Swal.fire({
+      title: "<strong>Anda berhasil Login!</strong>",
+      icon: "success",
+      showConfirmButton: false,
+      timer: 1500,
+      html: '<meta http-equiv="refresh" content="1; url=dashboard.html">',
+    });
+  } else {
+    Swal.fire({
+      title: "<strong>Error!</strong><br>email atau password anda salah!",
+      icon: "error",
+      showConfirmButton: true,
+      timer: 5000,
+      html: '<table class="table mt-3"> <tr> <th colspan="2" class="text-center">Demo Account</th> </tr> <tr class="text-center"> <th>Email</th> <th>Password</th> </tr> <tr class="text-center"> <td>mabot@mabot.com</td> <td>12345678</td> </tr> </table>',
+    });
+  }
+}
